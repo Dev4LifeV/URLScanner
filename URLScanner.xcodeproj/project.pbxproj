@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,9 +14,15 @@
 		CD5726282981ABA900B7EB15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD5726272981ABA900B7EB15 /* Assets.xcassets */; };
 		CD57262B2981ABA900B7EB15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD5726292981ABA900B7EB15 /* LaunchScreen.storyboard */; };
 		CD5726362981D41900B7EB15 /* ScanResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5726352981D41900B7EB15 /* ScanResponse.swift */; };
+		CD57263B2981D77D00B7EB15 /* EndpointScanURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57263A2981D77D00B7EB15 /* EndpointScanURL.swift */; };
+		CD57263D2981E6E400B7EB15 /* CatImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57263C2981E6E400B7EB15 /* CatImage.swift */; };
+		EB576F738A3569E340B17D94 /* Pods_URLScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7D8891E14E52531842502AB /* Pods_URLScanner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24C8061C8681070CB0301FB8 /* Pods-URLScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLScanner.release.xcconfig"; path = "Target Support Files/Pods-URLScanner/Pods-URLScanner.release.xcconfig"; sourceTree = "<group>"; };
+		39E495BC0A4D8D7B25DC0793 /* Pods-URLScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLScanner.debug.xcconfig"; path = "Target Support Files/Pods-URLScanner/Pods-URLScanner.debug.xcconfig"; sourceTree = "<group>"; };
+		C7D8891E14E52531842502AB /* Pods_URLScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD57261B2981ABA700B7EB15 /* URLScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD57261E2981ABA700B7EB15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD5726202981ABA700B7EB15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +32,8 @@
 		CD57262A2981ABA900B7EB15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD57262C2981ABA900B7EB15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD5726352981D41900B7EB15 /* ScanResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResponse.swift; sourceTree = "<group>"; };
+		CD57263A2981D77D00B7EB15 /* EndpointScanURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointScanURL.swift; sourceTree = "<group>"; };
+		CD57263C2981E6E400B7EB15 /* CatImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB576F738A3569E340B17D94 /* Pods_URLScanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9BE83048ACB796761BE6A95A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7D8891E14E52531842502AB /* Pods_URLScanner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF2CA9FD180DAC61DF8C1B9E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				39E495BC0A4D8D7B25DC0793 /* Pods-URLScanner.debug.xcconfig */,
+				24C8061C8681070CB0301FB8 /* Pods-URLScanner.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CD5726122981ABA700B7EB15 = {
 			isa = PBXGroup;
 			children = (
 				CD57261D2981ABA700B7EB15 /* URLScanner */,
 				CD57261C2981ABA700B7EB15 /* Products */,
+				BF2CA9FD180DAC61DF8C1B9E /* Pods */,
+				9BE83048ACB796761BE6A95A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +87,7 @@
 		CD57261D2981ABA700B7EB15 /* URLScanner */ = {
 			isa = PBXGroup;
 			children = (
+				CD5726392981D6FE00B7EB15 /* Endpoints */,
 				CD5726372981D42F00B7EB15 /* Core */,
 				CD5726342981ABEE00B7EB15 /* Model */,
 				CD5726332981ABE800B7EB15 /* View */,
@@ -91,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				CD5726352981D41900B7EB15 /* ScanResponse.swift */,
+				CD57263C2981E6E400B7EB15 /* CatImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +133,14 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		CD5726392981D6FE00B7EB15 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				CD57263A2981D77D00B7EB15 /* EndpointScanURL.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +148,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD57262F2981ABA900B7EB15 /* Build configuration list for PBXNativeTarget "URLScanner" */;
 			buildPhases = (
+				AC9943884A5619B61759ACD1 /* [CP] Check Pods Manifest.lock */,
 				CD5726172981ABA700B7EB15 /* Sources */,
 				CD5726182981ABA700B7EB15 /* Frameworks */,
 				CD5726192981ABA700B7EB15 /* Resources */,
@@ -138,7 +178,7 @@
 				};
 			};
 			buildConfigurationList = CD5726162981ABA700B7EB15 /* Build configuration list for PBXProject "URLScanner" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -168,6 +208,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AC9943884A5619B61759ACD1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-URLScanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CD5726172981ABA700B7EB15 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -176,6 +241,8 @@
 				CD5726232981ABA700B7EB15 /* ViewController.swift in Sources */,
 				CD5726362981D41900B7EB15 /* ScanResponse.swift in Sources */,
 				CD57261F2981ABA700B7EB15 /* AppDelegate.swift in Sources */,
+				CD57263B2981D77D00B7EB15 /* EndpointScanURL.swift in Sources */,
+				CD57263D2981E6E400B7EB15 /* CatImage.swift in Sources */,
 				CD5726212981ABA700B7EB15 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +385,7 @@
 		};
 		CD5726302981ABA900B7EB15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39E495BC0A4D8D7B25DC0793 /* Pods-URLScanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -346,6 +414,7 @@
 		};
 		CD5726312981ABA900B7EB15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24C8061C8681070CB0301FB8 /* Pods-URLScanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
