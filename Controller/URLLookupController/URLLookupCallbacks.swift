@@ -14,8 +14,6 @@ extension URLLookupViewController {
             return
         }
         
-        print("Progress \(progress)")
-        
         DispatchQueue.main.async {
             self.circularProgress.progress = progress
         }
