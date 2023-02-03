@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		9749FF4C32C321341235FBB7 /* Pods_URLScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A653FE2F0DF1D4820DB1D3 /* Pods_URLScanner.framework */; };
 		CDA8E84A298DB40D0051A8AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E821298DB3DF0051A8AD /* AppDelegate.swift */; };
-		CDA8E84B298DB40D0051A8AD /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E817298DB3DF0051A8AD /* CardView.swift */; };
-		CDA8E84C298DB40D0051A8AD /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E819298DB3DF0051A8AD /* CircularProgressView.swift */; };
-		CDA8E84D298DB40D0051A8AD /* ScanDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E81B298DB3DF0051A8AD /* ScanDetailsView.swift */; };
 		CDA8E84E298DB40D0051A8AD /* URLLookupDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E841298DB3DF0051A8AD /* URLLookupDetailsViewController.swift */; };
 		CDA8E84F298DB40D0051A8AD /* URLLookupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E843298DB3DF0051A8AD /* URLLookupViewController.swift */; };
 		CDA8E850298DB40D0051A8AD /* URLLookupCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E844298DB3DF0051A8AD /* URLLookupCallbacks.swift */; };
@@ -28,8 +25,11 @@
 		CDA8E85B298DB41E0051A8AD /* ServiceGetAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E831298DB3DF0051A8AD /* ServiceGetAPIRequest.swift */; };
 		CDA8E85C298DB41E0051A8AD /* UsecaseGetURLScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E823298DB3DF0051A8AD /* UsecaseGetURLScan.swift */; };
 		CDA8E85D298DB41E0051A8AD /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E83C298DB3DF0051A8AD /* Dimensions.swift */; };
-		CDA8E85F298DB4C50051A8AD /* LaunchScreen.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E81D298DB3DF0051A8AD /* LaunchScreen.storyboard */; };
-		CDA8E860298DB4C50051A8AD /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E81F298DB3DF0051A8AD /* Main.storyboard */; };
+		CDA8E861298DB7060051A8AD /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E825298DB3DF0051A8AD /* CardView.swift */; };
+		CDA8E862298DB7060051A8AD /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E826298DB3DF0051A8AD /* CircularProgressView.swift */; };
+		CDA8E863298DB7060051A8AD /* ScanDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E827298DB3DF0051A8AD /* ScanDetailsView.swift */; };
+		CDA8E874298DB82E0051A8AD /* LaunchScreen.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E828298DB3DF0051A8AD /* LaunchScreen.storyboard */; };
+		CDA8E875298DB82E0051A8AD /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E82A298DB3DF0051A8AD /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -445,16 +445,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA8E85F298DB4C50051A8AD /* LaunchScreen.storyboard in Sources */,
-				CDA8E860298DB4C50051A8AD /* Main.storyboard in Sources */,
+				CDA8E874298DB82E0051A8AD /* LaunchScreen.storyboard in Sources */,
+				CDA8E875298DB82E0051A8AD /* Main.storyboard in Sources */,
+				CDA8E861298DB7060051A8AD /* CardView.swift in Sources */,
+				CDA8E862298DB7060051A8AD /* CircularProgressView.swift in Sources */,
+				CDA8E863298DB7060051A8AD /* ScanDetailsView.swift in Sources */,
 				CDA8E85A298DB41E0051A8AD /* SceneDelegate.swift in Sources */,
 				CDA8E85B298DB41E0051A8AD /* ServiceGetAPIRequest.swift in Sources */,
 				CDA8E85C298DB41E0051A8AD /* UsecaseGetURLScan.swift in Sources */,
 				CDA8E85D298DB41E0051A8AD /* Dimensions.swift in Sources */,
 				CDA8E84A298DB40D0051A8AD /* AppDelegate.swift in Sources */,
-				CDA8E84B298DB40D0051A8AD /* CardView.swift in Sources */,
-				CDA8E84C298DB40D0051A8AD /* CircularProgressView.swift in Sources */,
-				CDA8E84D298DB40D0051A8AD /* ScanDetailsView.swift in Sources */,
 				CDA8E84E298DB40D0051A8AD /* URLLookupDetailsViewController.swift in Sources */,
 				CDA8E84F298DB40D0051A8AD /* URLLookupViewController.swift in Sources */,
 				CDA8E850298DB40D0051A8AD /* URLLookupCallbacks.swift in Sources */,
