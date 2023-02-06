@@ -7,45 +7,44 @@
 
 import Foundation
 
-struct ScanResponse {
+struct ScanResponse: Decodable {
     var message: String = ""
     var success: Bool = false
     var unsafe: Bool = false
     var domain: String = ""
-    var ipAddress: String = ""
+    var ip_address: String = ""
     var server: String = ""
-    var contentType: String = ""
-    var statusCode: Int = 0
-    var pageSize: Int = 0
-    var domainRank: Int = 0
-    var dnsValid: Bool = false
+    var content_type: String = ""
+    var status_code: Int = 0
+    var page_size: Int = 0
+    var domain_rank: Int = 0
+    var dns_valid: Bool = false
     var parking: Bool = false
     var spamming: Bool = false
     var malware: Bool = false
     var phishing: Bool = false
     var suspicious: Bool = false
     var adult: Bool = false
-    var riskScore: Int = 0
+    var risk_score: Int = 0
     var category: String = ""
-    var requestId: String = ""
-    
+    var request_id: String = ""
     var asDictionary : [String: Any] {
         let mirror = Mirror(reflecting: self)
         
-        let dict = Dictionary(
-            uniqueKeysWithValues: mirror.children.lazy.map(
-                {
-                    (label: String?, value: Any) -> (String, Any)? in
-                    
-                    guard let label = label else {
-                        return nil
-                    }
-                    
-                    return (label, value)
+        var dictionary: [String: Any] = [:]
+        
+        mirror.children.forEach(
+            {
+                (label: String?, value: Any) in
+                
+                guard let label = label else {
+                    return
                 }
-            ).compactMap { $0 })
-        
-        return dict
-        
+                
+                dictionary[label] = value
+            }
+        )
+            
+        return dictionary
     }
 }
