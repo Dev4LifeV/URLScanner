@@ -7,24 +7,30 @@
 
 import Foundation
 class UsecaseGetURLScan: Usecase {
-    
+        
     init() {
-        service = ServiceGetAPIRequest<[CatImage]>(request: URLRequest(url: URL(string: "https://api.thecatapi.com/v1/images/search?api_key=live_8I4Q4nrAA0rVJS1YkxFx3ntym1cuLnwhF5nzjWd4DMVSk91ow9AE5fjEAxAPF6Q6")!))
+        service = ServiceGetAPIRequest<ScanResponse>()
         endpoint = EndpointGetURLScan(service: service)
     }
     
-    internal let service: ServiceGetAPIRequest<[CatImage]>
+    internal let service: ServiceGetAPIRequest<ScanResponse>
     
     internal var endpoint: EndpointGetURLScan
     
     var dataProgress: Double!
     
-    func callUsecase(with completion: @escaping (Result<[CatImage], Error>) -> Void) {
+    func callUsecase(with completion: @escaping (Result<ScanResponse, Error>) -> Void, params: Any? = nil) {
+        
+        guard let url = params as? String else {
+            return
+        }
+        
+        service.request = URLRequest(url: URL(string: "https://ipqualityscore.com/api/json/url/RidJl9FMPQ8m6ygqqDvtQD7dEBm5mav1/\(url)")!)
         
         endpoint.sendRequest(with: { result in
             switch result {
-            case .success(let content):
-                completion(.success(content))
+            case .success(let scan):
+                completion(.success(scan))
             case .failure(let error):
                 print("Failed while fetching data: \(error)")
                 completion(.failure(error))
