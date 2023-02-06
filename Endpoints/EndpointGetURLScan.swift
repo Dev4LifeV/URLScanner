@@ -9,13 +9,13 @@ import Foundation
 
 class EndpointGetURLScan: Endpoint {
 
-    init(service: ServiceGetAPIRequest<[CatImage]>) {
+    init(service: ServiceGetAPIRequest<ScanResponse>) {
         self.service = service
     }
     
-    let service: ServiceGetAPIRequest<[CatImage]>
+    let service: ServiceGetAPIRequest<ScanResponse>
     
-    func sendRequest(with completion: @escaping (Result<[CatImage], Error>) -> Void) {
+    func sendRequest(with completion: @escaping (Result<ScanResponse, Error>) -> Void) {
         
         service.sendRequest(with: { result in
             switch result {
