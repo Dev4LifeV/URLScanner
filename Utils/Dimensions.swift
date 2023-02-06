@@ -28,11 +28,11 @@ extension UIView {
     }
     
     var right: NSLayoutXAxisAnchor {
-        return safeAreaLayoutGuide.leadingAnchor
+        return safeAreaLayoutGuide.trailingAnchor
     }
     
     var left: NSLayoutXAxisAnchor {
-        return safeAreaLayoutGuide.trailingAnchor
+        return safeAreaLayoutGuide.leadingAnchor
     }
     
     var centerX: NSLayoutXAxisAnchor {
