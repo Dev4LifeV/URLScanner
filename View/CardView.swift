@@ -38,9 +38,6 @@ class CardView: UIView {
         
         drawShadow(path: path.cgPath)
         cacheShadow(true)
-        
-//        self.addSubview(title)
-//        self.addSubview(content)
     }
     
     func drawShadow(path: CGPath) {
