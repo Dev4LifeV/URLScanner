@@ -30,6 +30,7 @@
 		CDA8E863298DB7060051A8AD /* ScanDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E827298DB3DF0051A8AD /* ScanDetailsView.swift */; };
 		CDA8E874298DB82E0051A8AD /* LaunchScreen.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E828298DB3DF0051A8AD /* LaunchScreen.storyboard */; };
 		CDA8E875298DB82E0051A8AD /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E82A298DB3DF0051A8AD /* Main.storyboard */; };
+		CDA8E878298DCF8A0051A8AD /* URLLookupDetailsDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA8E877298DCF8A0051A8AD /* URLLookupDetailsDimensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		CDA8E848298DB3DF0051A8AD /* CatImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImage.swift; sourceTree = "<group>"; };
 		CDA8E849298DB3DF0051A8AD /* ScanResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResponse.swift; sourceTree = "<group>"; };
 		CDA8E85E298DB4620051A8AD /* URLScanner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "URLScanner-Bridging-Header.h"; sourceTree = "<group>"; };
+		CDA8E877298DCF8A0051A8AD /* URLLookupDetailsDimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLLookupDetailsDimensions.swift; sourceTree = "<group>"; };
 		CDCC6CB9298DA73A00061F8E /* URLScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -299,7 +301,7 @@
 		CDA8E840298DB3DF0051A8AD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CDA8E841298DB3DF0051A8AD /* URLLookupDetailsViewController.swift */,
+				CDA8E876298DCF700051A8AD /* URLLookupDetailsController */,
 				CDA8E842298DB3DF0051A8AD /* URLLookupController */,
 				CDA8E846298DB3DF0051A8AD /* TabBarController.swift */,
 			);
@@ -323,6 +325,15 @@
 				CDA8E849298DB3DF0051A8AD /* ScanResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CDA8E876298DCF700051A8AD /* URLLookupDetailsController */ = {
+			isa = PBXGroup;
+			children = (
+				CDA8E841298DB3DF0051A8AD /* URLLookupDetailsViewController.swift */,
+				CDA8E877298DCF8A0051A8AD /* URLLookupDetailsDimensions.swift */,
+			);
+			path = URLLookupDetailsController;
 			sourceTree = "<group>";
 		};
 		DAEC9E8157EB93B1EDF4EB06 /* Frameworks */ = {
@@ -453,6 +464,7 @@
 				CDA8E85A298DB41E0051A8AD /* SceneDelegate.swift in Sources */,
 				CDA8E85B298DB41E0051A8AD /* ServiceGetAPIRequest.swift in Sources */,
 				CDA8E85C298DB41E0051A8AD /* UsecaseGetURLScan.swift in Sources */,
+				CDA8E878298DCF8A0051A8AD /* URLLookupDetailsDimensions.swift in Sources */,
 				CDA8E85D298DB41E0051A8AD /* Dimensions.swift in Sources */,
 				CDA8E84A298DB40D0051A8AD /* AppDelegate.swift in Sources */,
 				CDA8E84E298DB40D0051A8AD /* URLLookupDetailsViewController.swift in Sources */,
