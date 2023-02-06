@@ -7,12 +7,7 @@
 
 import Foundation
 extension URLLookupDetailsViewController {
-    override func viewDidLayoutSubviews() {
-        setupScrollView()
-        setupContentView()
-        setConstraintsHeader()
-        setConstraintsScanDetails()
-    }
+    
     
     func setupScrollView() {
         let scrollContentSizepadding = 200.0
@@ -35,7 +30,6 @@ extension URLLookupDetailsViewController {
         contentView.enableAutoLayout()
         scrollView.addSubview(contentView)
         
-        
         [
             contentView.right.constraint(equalTo: scrollView.trailingAnchor),
             contentView.left.constraint(equalTo: scrollView.leadingAnchor),
@@ -54,6 +48,20 @@ extension URLLookupDetailsViewController {
         ].activate()
     }
     
+    func setConstraintsUrlHeader() {
+        [
+            urlLabel.left.constraint(equalTo: header.left, constant: 20),
+            urlLabel.top.constraint(equalTo: header.top, constant: 20),
+            divider.height.constraint(equalToConstant: 1),
+            divider.width.constraint(equalTo: header.width, constant: -30),
+            divider.top.constraint(equalTo: urlLabel.bottom, constant: 5),
+            divider.left.constraint(equalTo: urlLabel.left),
+            suspiciousLabel.height.constraint(equalToConstant: 20),
+            suspiciousLabel.left.constraint(equalTo: divider.left),
+            suspiciousLabel.top.constraint(equalTo: divider.bottom, constant: 10)
+        ].activate()
+    }
+    
     func setConstraintsScanDetails() {
         [
             scanDetails.centerX.constraint(equalTo: contentView.centerX),
@@ -61,4 +69,13 @@ extension URLLookupDetailsViewController {
             scanDetails.height.constraint(equalToConstant: rowHeight * numOfRows)
         ].activate()
     }
+    
+    func setConstraintsNoDataLabel() {
+        [
+            noDataAvailableLabel.height.constraint(equalToConstant: 20),
+            noDataAvailableLabel.centerX.constraint(equalTo: view.centerX),
+            noDataAvailableLabel.centerY.constraint(equalTo: view.centerY)
+        ].activate()
+    }
+
 }
