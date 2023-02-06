@@ -8,18 +8,19 @@
 import Foundation
 class ServiceGetAPIRequest<T: Decodable>: ServiceAPIRequest {
     
-    init(request: URLRequest) {
-        self.request = request
-    }
-    
     internal var decoder = JSONDecoder()
-    internal var request: URLRequest
+    internal var request: URLRequest!
     
     var obs: NSKeyValueObservation!
     
     
     func sendRequest(with completion: @escaping (Result<T, Error>) -> Void) {
-        let task = URLSession.shared.dataTask(with: request, completionHandler: { [weak self] data, response, error in
+        
+        guard let req = request else {
+            fatalError("To use the API service, please fill the property 'request' with a URLRequest")
+        }
+        
+        let task = URLSession.shared.dataTask(with: req, completionHandler: { [weak self] data, response, error in
             
             guard let strongSelf = self else {
                 return
