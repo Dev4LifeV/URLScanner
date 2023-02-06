@@ -22,7 +22,7 @@ class URLLookupViewController: UIViewController {
     
     let insertURLLabel: UILabel = {
         let label = UILabel()
-        label.text = "Insert the URL to check whether is malicious"
+        label.text = "Scan for malwares in your URL address"
         label.textAlignment = .center
         label.font.withSize(18)
         label.lineBreakMode = .byWordWrapping
@@ -53,10 +53,16 @@ class URLLookupViewController: UIViewController {
         return input
     }()
     
+    static var response: ScanResponse?
+    
     var buttonClicked: Bool! {
         didSet {
-            fetchButton.isHidden = buttonClicked
-            circularProgress.isHidden = !buttonClicked
+            self.fetchButton.isHidden = self.buttonClicked
+            self.circularProgress.isHidden = !self.buttonClicked
+            
+            DispatchQueue.main.async {
+                self.tabBarController?.tabBar.isHidden = self.buttonClicked
+            }
         }
     }
     
@@ -67,7 +73,7 @@ class URLLookupViewController: UIViewController {
     
         fetchButton.layer.cornerRadius = circularProgress.frame.width / 2
     
-        fetchButton.addTarget(self, action: #selector(fetchImage), for: .touchUpInside)
+        fetchButton.addTarget(self, action: #selector(scanURL), for: .touchUpInside)
         
         view.addSubview(urlField)
         view.addSubview(fetchButton)
