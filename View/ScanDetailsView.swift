@@ -23,24 +23,38 @@ class ScanDetailsView: UITableView, UITableViewDelegate, UITableViewDataSource {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let mockData =
-        ScanResponse(message: "", success: true, unsafe: true, domain: "domain", ipAddress: "", server: "", contentType: "", statusCode: 0, pageSize: 0, domainRank: 0, dnsValid: true, parking: true, spamming: true, malware: true, phishing: true, suspicious: true, adult: true, riskScore: 0, category: "", requestId: "")
+    var scanDetails: ScanResponse? {
+        didSet {
+            self.scanDetailsFormatted = scanDetails?.asDictionary
+        }
+    }
+    
+    var scanDetailsFormatted: [String: Any]?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Mirror(reflecting: mockData).children.count
+        return scanDetails != nil ? Mirror(reflecting: scanDetails!).children.count : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ScanDetailsCell
+        
+        guard let scan = scanDetailsFormatted else {
+            return cell
+        }
 
-        cell.key = "\(Array(mockData.asDictionary.keys)[indexPath.row]): ".capitalized
-        cell.value = "\(Array(mockData.asDictionary.values)[indexPath.row])"
+        cell.key = "\(Array(scan.keys)[indexPath.row].formatModelKey()): "
+        cell.value = "\(Array(scan.values)[indexPath.row])"
         
         return cell
     
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
     
@@ -57,6 +71,14 @@ internal class ScanDetailsCell: UITableViewCell {
         self.backgroundColor = .clear
         self.keyLabel.textColor = .white
         self.valueLabel.textColor = .white
+        contentView.addSubview(keyLabel)
+        contentView.addSubview(valueLabel)
+        keyLabel.enableAutoLayout()
+        keyLabel.height.constraint(equalToConstant: 40).isActive = true
+        keyLabel.left.constraint(equalTo: self.left, constant: 20).isActive = true
+        valueLabel.enableAutoLayout()
+        valueLabel.height.constraint(equalToConstant: 40).isActive = true
+        valueLabel.left.constraint(equalTo: keyLabel.right).isActive = true
     }
     
     required init?(coder: NSCoder) {
@@ -68,10 +90,6 @@ internal class ScanDetailsCell: UITableViewCell {
     var key: String = "" {
         didSet {
             keyLabel.text = self.key
-            keyLabel.enableAutoLayout()
-            contentView.addSubview(keyLabel)
-            keyLabel.height.constraint(equalToConstant: 40).isActive = true
-            keyLabel.left.constraint(equalTo: self.left, constant: 20).isActive = true
         }
     }
     
@@ -79,11 +97,7 @@ internal class ScanDetailsCell: UITableViewCell {
     
     var value: String = "" {
         didSet {
-            valueLabel.enableAutoLayout()
             valueLabel.text = self.value
-            valueLabel.height.constraint(equalToConstant: 40).isActive = true
-            contentView.addSubview(valueLabel)
-            valueLabel.left.constraint(equalTo: keyLabel.right).isActive = true
         }
         
     }
