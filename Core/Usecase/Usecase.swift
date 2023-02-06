@@ -16,5 +16,5 @@ protocol Usecase {
     
     var endpoint: E { get }
     
-    func callUsecase(with completion: @escaping (Result<T, Error>) -> Void)
+    func callUsecase(with completion: @escaping (Result<T, Error>) -> Void, params: Any?)
 }
